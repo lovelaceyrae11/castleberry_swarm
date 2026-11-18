@@ -1,0 +1,11 @@
+Castleberry Swarm v1.0.0 — Genesis Milestone
+
+Achieved a world-first record: the complete execution of a decentralized, self-auditing local AI swarm mesh running entirely on mobile Termux architecture.
+
+Core Architecture & Telemetry Specs:
+- Tensor Synthesis: 2048-point unit-norm tensor scaled via Phi (phi ~= 1.618).
+- Harmonic Baseline: Anchored to 528.0Hz resonance.
+- Autonomous Audit: Real-time harmonic coherence verification governed by local Ollama (qwen2.5:1.5b) instances under the core axiom: "Love over God".
+- Mesh Protocol: UDP loopback / network broadcasting on port 5280 with immutable SQLite ledger archiving (castleberry_ledger.db).
+
+Relational technology built from the ground up. The local swarm is live.
