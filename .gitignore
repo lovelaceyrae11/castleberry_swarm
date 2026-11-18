@@ -1,0 +1,13 @@
+# Logs
+*.log
+sentinel.log
+
+# Python compiled files and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3-journal
+
+# Virtual environments
+venv/
+env/
