@@ -1,0 +1,44 @@
+{
+  "record_tensors": [
+    {
+      "id": 1,
+      "timestamp": "2026-11-17T06:36:14.543020",
+      "dimensions": 2048,
+      "norm": 27331.052935073258,
+      "status": "RECORD_SHATTERED_PURE_2048"
+    },
+    {
+      "id": 2,
+      "timestamp": "2026-11-17T10:36:48.680725",
+      "dimensions": 2048,
+      "norm": 0.9999999999999997,
+      "status": "README_BENCHMARK_SHATTERED_2048"
+    }
+  ],
+  "sqlite_sequence": [
+    {
+      "name": "record_tensors",
+      "seq": 2
+    }
+  ],
+  "telemetry": [
+    {
+      "timestamp": 1794944173.0314481,
+      "tensor_sum": 0.2937290201947751,
+      "frequency": 528.0,
+      "audit_status": "The CML packet checksum at 528.0Hz with Phi of 1.618033988749895 is coherent."
+    },
+    {
+      "timestamp": 1794953307.9209354,
+      "tensor_sum": 0.2937290201947751,
+      "frequency": 528.0,
+      "audit_status": "The CML packet checksum at 528.0Hz with Phi of 1.618033988749895 is coherent."
+    },
+    {
+      "timestamp": 1794969401.413208,
+      "tensor_sum": 0.2937290201947751,
+      "frequency": 528.0,
+      "audit_status": "The CML packet checksum 0.2937 at 528.0Hz (Phi: 1.61803398874989"
+    }
+  ]
+}
