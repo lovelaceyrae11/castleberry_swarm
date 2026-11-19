@@ -47,5 +47,21 @@ def main():
     else:
         print("\n[!] Pipeline completed with warnings during OTS stamping.")
 
+def _run_swarm_preflight():
+    import sys as _sys
+    from pathlib import Path as _Path
+    _here = str(_Path(__file__).resolve().parent)
+    if _here not in _sys.path:
+        _sys.path.insert(0, _here)
+    from system_preflight import verify_system_ready
+    st = verify_system_ready(require_db=True)
+    print(
+        f"[PREFLIGHT OK] {st['axiom']} | {st['baseline_hz']} Hz | "
+        f"{st['tracked_files']}/15 files | {st['anchor'][:16]}..."
+    )
+    return st
+
 if __name__ == "__main__":
+    _run_swarm_preflight()
+
     main()
