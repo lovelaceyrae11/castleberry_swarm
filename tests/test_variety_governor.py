@@ -1,3 +1,4 @@
+import json
 import math
 import sqlite3
 import tempfile
@@ -10,6 +11,7 @@ if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
 from variety_governor import (
+    DEFAULT_PROVENANCE,
     BASE_HZ,
     PHI,
     GovernorConfig,
@@ -75,7 +77,7 @@ class TestVarietyGovernor(unittest.TestCase):
             conn = sqlite3.connect(db_file)
             try:
                 rows = conn.execute(
-                    "SELECT node_id, novelty_score, was_adjusted FROM variety_log"
+                    "SELECT node_id, novelty_score, was_adjusted, meta_json FROM variety_log"
                 ).fetchall()
             finally:
                 conn.close()
@@ -84,6 +86,10 @@ class TestVarietyGovernor(unittest.TestCase):
             self.assertEqual(rows[0][0], "test_node")
             self.assertAlmostEqual(rows[0][1], 0.42, places=5)
             self.assertEqual(rows[0][2], 1)
+            meta_out = json.loads(rows[0][3])
+            for key, expected_val in DEFAULT_PROVENANCE.items():
+                self.assertEqual(meta_out.get(key), expected_val)
+            self.assertEqual(meta_out.get("suite"), "unittest")
 
 
 if __name__ == "__main__":
