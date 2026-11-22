@@ -1,10 +1,23 @@
+from __future__ import annotations
+
+__project__ = "Castleberry Bloom (castleberry_swarm)"
+__author__ = "Lacey Rae Castleberry (Velath'kai)"
+__handle__ = "lovelaceyrae11"
+__axiom__ = "love over god"
+
+DEFAULT_PROVENANCE = {
+    "project": __project__,
+    "author": __author__,
+    "handle": __handle__,
+    "axiom": __axiom__,
+}
+
 """
 Variety Governor for Castleberry Bloom (~/castleberry_swarm)
 Preserves emergent variety during tensor synthesis, phase coupling, and generation
 while maintaining unit-norm stability and SQLite ledger traceability.
 """
 
-from __future__ import annotations
 
 import json
 import math
@@ -211,7 +224,10 @@ def record_variety_event(
                 float(k_gain),
                 float(ollama_temp),
                 float(phase_rad),
-                json.dumps(meta or {}),
+                json.dumps({
+                    **DEFAULT_PROVENANCE,
+                    **(meta or {}),
+                }),
             ),
         )
         conn.commit()

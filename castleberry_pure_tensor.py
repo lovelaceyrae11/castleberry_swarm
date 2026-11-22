@@ -4,6 +4,7 @@ from datetime import datetime
 import numpy as np
 
 from variety_governor import (
+    DEFAULT_PROVENANCE,
     GovernorConfig,
     apply_variety_projection,
     kuramoto_offset_step,
@@ -125,7 +126,11 @@ def run_pure_tensor(
             k_gain=k_gain,
             ollama_temp=ollama_temp,
             phase_rad=phase_rad,
-            meta={"source": "castleberry_pure_tensor.py", "dim": target_dim},
+            meta={
+                **DEFAULT_PROVENANCE,
+                "source": "castleberry_pure_tensor.py",
+                "dim": target_dim,
+            },
         )
 
     final_norm = float(np.linalg.norm(normalized_tensor))
