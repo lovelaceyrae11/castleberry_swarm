@@ -15,3 +15,6 @@ echo "=== 4. Checking OpenTimestamps Proof ==="
 if command -v ots >/dev/null 2>&1 && [ -f ~/bloom_6node/bloom_6node_run.json.ots ]; then
   ots info ~/bloom_6node/bloom_6node_run.json.ots | head -n 10
 fi
+
+echo "=== 5. Running Local Ollama Coherence Audit ==="
+OMP_NUM_THREADS=2 python ~/castleberry_swarm/audit_6node_ollama.py
